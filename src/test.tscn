@@ -1,10 +1,95 @@
-[gd_scene load_steps=2 format=3 uid="uid://f150kelbl01l"]
+[gd_scene load_steps=11 format=3 uid="uid://f150kelbl01l"]
 
 [ext_resource type="Texture2D" uid="uid://bgard55ft20qs" path="res://Union (1).png" id="1_37kl0"]
+[ext_resource type="AudioStream" uid="uid://bffq07opq7fvp" path="res://20.Raise Up Your Bat DELTARUNE Chapter 3 4 Soundtrack Toby Fox.mp3" id="1_ehkex"]
+[ext_resource type="Script" uid="uid://b6oairolq5g71" path="res://arrowKey.gd" id="2_8uh7m"]
+[ext_resource type="Script" uid="uid://cfgdecrl3gih0" path="res://conductor.gd" id="2_xersf"]
+[ext_resource type="PackedScene" uid="uid://ckanwk8tqn7et" path="res://downNote.tscn" id="5_00tp4"]
+[ext_resource type="Script" uid="uid://blhd6tbntn00y" path="res://chart.gd" id="5_xersf"]
+[ext_resource type="PackedScene" uid="uid://crmq1uggi6r8t" path="res://leftNote.tscn" id="6_77dp3"]
+[ext_resource type="PackedScene" uid="uid://b35gdvjk87nst" path="res://upNote.tscn" id="7_5tkv4"]
+[ext_resource type="PackedScene" uid="uid://c1so2htq2x2kk" path="res://rightNote.tscn" id="8_0m0f1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8uh7m"]
+size = Vector2(1050, 1050)
 
 [node name="test" type="Node2D"]
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Conductor" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_ehkex")
+script = ExtResource("2_xersf")
+
+[node name="Timer" type="Timer" parent="Conductor"]
+one_shot = true
+autostart = true
+
+[node name="arrowRow" type="Node2D" parent="."]
 position = Vector2(960, 960)
+
+[node name="down" type="Sprite2D" parent="arrowRow"]
+position = Vector2(-87, 0.250122)
+rotation = 1.5708
 scale = Vector2(0.153364, 0.153364)
 texture = ExtResource("1_37kl0")
+script = ExtResource("2_8uh7m")
+arrowType = "down"
+
+[node name="Area2D" type="Area2D" parent="arrowRow/down"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="arrowRow/down/Area2D"]
+shape = SubResource("RectangleShape2D_8uh7m")
+
+[node name="left" type="Sprite2D" parent="arrowRow"]
+position = Vector2(-263.097, 0.250122)
+rotation = 3.14159
+scale = Vector2(0.153364, 0.153364)
+texture = ExtResource("1_37kl0")
+script = ExtResource("2_8uh7m")
+
+[node name="Area2D" type="Area2D" parent="arrowRow/left"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="arrowRow/left/Area2D"]
+shape = SubResource("RectangleShape2D_8uh7m")
+
+[node name="up" type="Sprite2D" parent="arrowRow"]
+position = Vector2(86.9026, 0.250122)
+rotation = -1.5708
+scale = Vector2(0.153364, 0.153364)
+texture = ExtResource("1_37kl0")
+script = ExtResource("2_8uh7m")
+arrowType = "up"
+
+[node name="Area2D" type="Area2D" parent="arrowRow/up"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="arrowRow/up/Area2D"]
+shape = SubResource("RectangleShape2D_8uh7m")
+
+[node name="right" type="Sprite2D" parent="arrowRow"]
+position = Vector2(263, 0.250122)
+scale = Vector2(0.153364, 0.153364)
+texture = ExtResource("1_37kl0")
+script = ExtResource("2_8uh7m")
+arrowType = "right"
+
+[node name="Area2D" type="Area2D" parent="arrowRow/right"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="arrowRow/right/Area2D"]
+shape = SubResource("RectangleShape2D_8uh7m")
+
+[node name="chart" type="Node2D" parent="."]
+position = Vector2(960, 960)
+script = ExtResource("5_xersf")
+
+[node name="down" parent="chart" instance=ExtResource("5_00tp4")]
+position = Vector2(-88, -511.75)
+
+[node name="left" parent="chart" instance=ExtResource("6_77dp3")]
+position = Vector2(-264.097, -268.847)
+
+[node name="up" parent="chart" instance=ExtResource("7_5tkv4")]
+position = Vector2(85.9026, -368.75)
+
+[node name="right" parent="chart" instance=ExtResource("8_0m0f1")]
+position = Vector2(262, -594.75)
+
+[connection signal="timeout" from="Conductor/Timer" to="Conductor" method="_on_timer_timeout"]
