@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://f150kelbl01l"]
+
+[ext_resource type="Texture2D" uid="uid://bgard55ft20qs" path="res://Union (1).png" id="1_37kl0"]
+
+[node name="test" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(960, 960)
+scale = Vector2(0.153364, 0.153364)
+texture = ExtResource("1_37kl0")
