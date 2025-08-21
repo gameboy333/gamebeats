@@ -17,8 +17,11 @@ var time_off_beat = 0.0
 signal onBeat(pos)
 signal onMeasure(pos)
 signal onPos(pos)
+signal songStarted()
 
 func _ready():
+	gameVals.combo = 0
+	gameVals.score = 0
 	sec_per_beat = 60.0 / bpm
 
 func _physics_process(_delta):
@@ -27,7 +30,7 @@ func _physics_process(_delta):
 		song_pos -= AudioServer.get_output_latency()
 		emit_signal("onPos",song_pos)
 		song_pos_beats = int(floor(song_pos / sec_per_beat)) + beats_before_start
-		#print(song_pos_beats)
+		#print(song_pos)
 		_emit_beat()
 		
 func _emit_beat():
@@ -50,5 +53,6 @@ func _on_timer_timeout():
 		$Timer.start()
 	else:
 		play()
+		$"../chart".startSong()
 		$Timer.stop()
 	_emit_beat()

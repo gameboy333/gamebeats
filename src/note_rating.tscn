@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=3 uid="uid://chutrqyvi43e"]
+
+[ext_resource type="FontFile" uid="uid://cwhtbhsc4k3ql" path="res://GOTHAM-MEDIUM.TTF" id="1_qrnhm"]
+[ext_resource type="Script" uid="uid://cyid23onpfhte" path="res://note_rating.gd" id="2_5qa1a"]
+
+[node name="noteRating" type="Node2D"]
+script = ExtResource("2_5qa1a")
+
+[node name="label" type="RichTextLabel" parent="."]
+process_thread_group = 2
+process_thread_group_order = 0
+process_thread_messages = 0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -114.0
+offset_top = -33.9458
+offset_right = 114.0
+offset_bottom = 26.0542
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 15
+theme_override_fonts/normal_font = ExtResource("1_qrnhm")
+theme_override_font_sizes/normal_font_size = 50
+text = "cool!"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1

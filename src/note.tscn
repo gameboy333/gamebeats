@@ -1,0 +1,42 @@
+[gd_scene load_steps=5 format=3 uid="uid://crmq1uggi6r8t"]
+
+[ext_resource type="Texture2D" uid="uid://bgard55ft20qs" path="res://Union (1).png" id="1_doocs"]
+[ext_resource type="Script" uid="uid://dnj446mm5vesv" path="res://arrowNote.gd" id="2_wn01w"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8uh7m"]
+size = Vector2(1050, 1050)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_wn01w"]
+
+[node name="note" type="Node2D"]
+script = ExtResource("2_wn01w")
+
+[node name="Area2D" type="Area2D" parent="."]
+scale = Vector2(0.153364, 0.153364)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_8uh7m")
+
+[node name="Tail" type="TextureRect" parent="."]
+modulate = Color(0.0196078, 0.611765, 0.819608, 1)
+z_index = -1
+z_as_relative = false
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -36.5
+offset_right = 20.0
+offset_bottom = 3.5
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.76, 0.2)
+pivot_offset = Vector2(20, 40)
+texture = SubResource("CanvasTexture_wn01w")
+
+[node name="Arrow" type="Sprite2D" parent="."]
+modulate = Color(0.0358041, 0.784919, 1, 1)
+scale = Vector2(0.153364, 0.153364)
+texture = ExtResource("1_doocs")
