@@ -2,8 +2,10 @@
 ![whay](/gbrCover.png)\
 A rhythm game made in Godot as a successor to one I made a few years ago.
 ## Info
+**The game is not broken, I had to mute the chart due to copyright risks. Wait for a bit on the game and the arrows should come**\
+\
 The game is in pre-pre-pre-pre-pre-alpha, so anything may change at any time.\
-There is currently only one track and chart (Raise Up Your Bat by Toby Fox from Deltarune Chapters 3+4)
+There is currently only one chart (Raise Up Your Bat by Toby Fox from Deltarune Chapters 3+4)
 for testing the base gameplay (and since there aint a proper chart editor yet)\
 \
 Future plans include an in-game chart editor, chart events, and more!
