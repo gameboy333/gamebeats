@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://f150kelbl01l"]
 
 [ext_resource type="Texture2D" uid="uid://bgard55ft20qs" path="res://Union (1).png" id="1_37kl0"]
-[ext_resource type="AudioStream" uid="uid://dk30pvps3vykp" path="res://raiseupyourbat.mp3" id="1_vbegm"]
+[ext_resource type="AudioStream" uid="uid://xemuhw7d182w" path="res://raiseupyoursilence.mp3" id="1_vbegm"]
 [ext_resource type="Script" uid="uid://b6oairolq5g71" path="res://arrowKey.gd" id="2_8uh7m"]
 [ext_resource type="Script" uid="uid://cfgdecrl3gih0" path="res://conductor.gd" id="2_xersf"]
 [ext_resource type="Script" uid="uid://blhd6tbntn00y" path="res://chart.gd" id="5_ykrsh"]
