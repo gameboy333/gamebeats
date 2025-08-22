@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://f150kelbl01l"]
 
 [ext_resource type="Texture2D" uid="uid://bgard55ft20qs" path="res://Union (1).png" id="1_37kl0"]
-[ext_resource type="AudioStream" uid="uid://bffq07opq7fvp" path="res://20.Raise Up Your Bat DELTARUNE Chapter 3 4 Soundtrack Toby Fox.mp3" id="1_ehkex"]
+[ext_resource type="AudioStream" uid="uid://dk30pvps3vykp" path="res://raiseupyourbat.mp3" id="1_vbegm"]
 [ext_resource type="Script" uid="uid://b6oairolq5g71" path="res://arrowKey.gd" id="2_8uh7m"]
 [ext_resource type="Script" uid="uid://cfgdecrl3gih0" path="res://conductor.gd" id="2_xersf"]
 [ext_resource type="Script" uid="uid://blhd6tbntn00y" path="res://chart.gd" id="5_ykrsh"]
@@ -17,7 +17,7 @@ size = Vector2(1050, 1050)
 position = Vector2(960, 540)
 
 [node name="Conductor" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("1_ehkex")
+stream = ExtResource("1_vbegm")
 script = ExtResource("2_xersf")
 
 [node name="Timer" type="Timer" parent="Conductor"]
